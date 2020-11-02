@@ -1,1 +1,1 @@
-js-jsnacks-blocco-5
+js-pwdgen-wannabe

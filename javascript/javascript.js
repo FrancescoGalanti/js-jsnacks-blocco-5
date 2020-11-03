@@ -66,26 +66,59 @@
  // secondo esercizio //
 
 
- var myarray = ["Michele", "Fabio", "Roberto", "Giovanni", "Simone", "Chiara"];
- var tot = myarray.length - 1;
- var min = parseInt(prompt("indici di inizio tra 0 e " + tot) );
- var max = parseInt(prompt("indice di fine (superiore a indici di inizio), tra 0 e " + tot) );
+//  var myarray = ["Michele", "Fabio", "Roberto", "Giovanni", "Simone", "Chiara"];
+//  var tot = myarray.length - 1;
+//  var min = parseInt(prompt("indici di inizio tra 0 e " + tot) );
+//  var max = parseInt(prompt("indice di fine (superiore a indici di inizio), tra 0 e " + tot) );
+//
+//
+// var newarray = [];
+//
+// for(var i = 0; i < myarray.length; i++){
+//    if(min <= 1 && max >= i){
+//      newarray.push(myarray[i]);
+//    }
+// };
+//
+// console.log("original: " + myarray);
+// console.log("indexes: " + min, max);
+// console.log("New: " + newarray);
 
+
+// terzo eserciio //
+
+var myarray = [
+    {name: "Francesco", type:"tshirt", color:"red"},
+    {name: "Dario", type: "scooter", color: "blue"},
+    {name: "CrissCross", type: "scarpe", color: "yellow"},
+    {name: "Jenny", type: "borsa", color:"white"},
+]
 
 var newarray = [];
 
-for(var i = 0; i < myarray.length; i++){
-   if(min <= 1 && max >= i){
-     newarray.push(myarray[i]);
-   }
+
+for(var i = 0; i < myarray.length; i++ ){
+    var copyobjt = {
+      name: myarray[i].name,
+      type: myarray[i].type,
+      color: myarray[i].color,
+      position: generatePosition(),
+    }
+
+    newarray.push(copyobjt);
 };
 
-console.log("original: " + myarray);
-console.log("indexes: " + min, max);
-console.log("New: " + newarray);
+console.table(myarray);
+console.table(newarray);
 
 
+function generatePosition(){
+  var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+  var letter = letters[Math.floor(Math.random() * (letters.length - 1) + 1)];
+
+  return letter;
+}
 
 
 
